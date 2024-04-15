@@ -1,5 +1,11 @@
 # Teste Técnico Flutter Nível Junior
 
+## Resultado
+
+![first_page](https://github.com/Joel-Graf/Teste-Ibrowse-Flutter/assets/55204995/26705141-b800-433a-8a3e-3598c0c00af9)
+![second_page_1](https://github.com/Joel-Graf/Teste-Ibrowse-Flutter/assets/55204995/c4113c91-daab-4f83-baa4-16f687cc9e6c)
+![second_page_2](https://github.com/Joel-Graf/Teste-Ibrowse-Flutter/assets/55204995/cbaca84f-ba7b-4bb4-b0e0-14a1e2124b66)
+
 ## Objetivo
 
 Avaliar as habilidades básicas de um desenvolvedor Flutter júnior.
