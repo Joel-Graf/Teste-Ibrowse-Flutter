@@ -22,57 +22,40 @@ class _SecondScreenState extends State<SecondScreen> {
   }
 
   _initFileAndReadUserName() async {
-    await _initFile();
-    _readUserName();
-  }
-
-  _initFile() async {
     final directory = await getApplicationDocumentsDirectory();
-    _userFile = File('${directory.path}/nome_usuario.txt');
-  }
+    final userFilePath = '${directory.path}/nome_usuario.txt';
+    _userFile = File(userFilePath);
 
-  _readUserName() async {
-    try {
-      if (_userFile.existsSync()) {
-        setState(() {
-          _userName = _userFile.readAsStringSync();
-        });
-      }
-    } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Erro ao ler o nome do usuário'),
-          backgroundColor: AppColors.error,
-          duration: Duration(seconds: 1),
-        ),
-      );
+    if (_userFile.existsSync()) {
+      setState(() {
+        _userName = _userFile.readAsStringSync();
+      });
+    } else {
+      _showSnackBar('Erro ao ler o nome do usuário', AppColors.error);
     }
   }
 
   _writeUserName(String name) async {
-    final scaffoldMessenger = ScaffoldMessenger.of(context);
-
     try {
       await _userFile.writeAsString(name);
       setState(() {
         _userName = name;
       });
-      scaffoldMessenger.showSnackBar(
-        const SnackBar(
-          content: Text('Nome do usuário gravado com sucesso'),
-          backgroundColor: AppColors.success,
-          duration: Duration(seconds: 1),
-        ),
-      );
+      _showSnackBar('Nome do usuário gravado com sucesso', AppColors.success);
     } catch (e) {
-      scaffoldMessenger.showSnackBar(
-        const SnackBar(
-          content: Text('Erro ao gravar o nome do usuário'),
-          backgroundColor: AppColors.error,
-          duration: Duration(seconds: 1),
-        ),
-      );
+      _showSnackBar('Erro ao gravar o nome do usuário', AppColors.error);
     }
+  }
+
+  void _showSnackBar(String message, Color color) {
+    final scaffoldMessenger = ScaffoldMessenger.of(context);
+    scaffoldMessenger.showSnackBar(
+      SnackBar(
+        content: Text(message),
+        backgroundColor: color,
+        duration: const Duration(seconds: 1),
+      ),
+    );
   }
 
   @override
