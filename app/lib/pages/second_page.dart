@@ -1,16 +1,16 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:app/app_colors.dart';
+import 'package:app/util/app_colors.dart';
 
-class SecondScreen extends StatefulWidget {
-  const SecondScreen({Key? key}) : super(key: key);
+class SecondPage extends StatefulWidget {
+  const SecondPage({Key? key}) : super(key: key);
 
   @override
-  State<SecondScreen> createState() => _SecondScreenState();
+  State<SecondPage> createState() => _SecondPageState();
 }
 
-class _SecondScreenState extends State<SecondScreen> {
+class _SecondPageState extends State<SecondPage> {
   final TextEditingController _textEditingController = TextEditingController();
   String _userName = '';
   late File _userFile;
