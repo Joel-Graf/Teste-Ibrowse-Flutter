@@ -88,7 +88,7 @@ class _SecondScreenState extends State<SecondScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             const Text(
-              'Nome do Usuário:',
+              'Nome do usuário:',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
@@ -102,9 +102,17 @@ class _SecondScreenState extends State<SecondScreen> {
             const SizedBox(height: 20),
             TextField(
               controller: _textEditingController,
-              decoration: const InputDecoration(
+              cursorColor: AppColors.primary,
+              decoration: InputDecoration(
                 hintText: 'Digite o seu nome',
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
+                focusedBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(color: AppColors.primary),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide:
+                      BorderSide(color: AppColors.primary.withOpacity(0.5)),
+                ),
               ),
             ),
             const SizedBox(height: 20),
@@ -115,7 +123,11 @@ class _SecondScreenState extends State<SecondScreen> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.primary,
               ),
-              child: const Text('Gravar Nome'),
+              child: const Text('Gravar nome',
+                  style: TextStyle(
+                      color: AppColors
+                          .whiteText // Define a cor do texto como branco
+                      )),
             ),
           ],
         ),
