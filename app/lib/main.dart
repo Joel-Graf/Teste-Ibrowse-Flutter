@@ -45,7 +45,7 @@ class MyHomePage extends StatelessWidget {
               );
             },
             label: const Text(
-              'Go to Second Screen',
+              'Ir para segunda tela',
               style: TextStyle(fontSize: 18),
             ),
             icon: const Icon(
