@@ -49,4 +49,4 @@ O uso da memória deve ser eficiente.
 
 ### Recursos adicionais
 
-Documentação do Flutter: https://docs.flutter.dev/
+Documentação do Flutter: <https://docs.flutter.dev/>
