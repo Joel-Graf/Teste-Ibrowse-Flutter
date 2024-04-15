@@ -1,10 +1,11 @@
 import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:app/app_colors.dart';
 
 class SecondScreen extends StatefulWidget {
-  const SecondScreen({super.key});
+  const SecondScreen({Key? key}) : super(key: key);
 
   @override
   _SecondScreenState createState() => _SecondScreenState();
@@ -39,21 +40,25 @@ class _SecondScreenState extends State<SecondScreen> {
         });
       }
     } catch (e) {
-      const SnackBar(
-        content: Text('Erro ao ler o nome do usuário'),
-        backgroundColor: AppColors.error,
-        duration: Duration(seconds: 1),
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Erro ao ler o nome do usuário'),
+          backgroundColor: AppColors.error,
+          duration: Duration(seconds: 1),
+        ),
       );
     }
   }
 
   _writeUserName(String name) async {
+    final scaffoldMessenger = ScaffoldMessenger.of(context);
+
     try {
       await _userFile.writeAsString(name);
       setState(() {
         _userName = name;
       });
-      ScaffoldMessenger.of(context).showSnackBar(
+      scaffoldMessenger.showSnackBar(
         const SnackBar(
           content: Text('Nome do usuário gravado com sucesso'),
           backgroundColor: AppColors.primary,
@@ -61,7 +66,7 @@ class _SecondScreenState extends State<SecondScreen> {
         ),
       );
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
+      scaffoldMessenger.showSnackBar(
         const SnackBar(
           content: Text('Erro ao gravar o nome do usuário'),
           backgroundColor: AppColors.error,
