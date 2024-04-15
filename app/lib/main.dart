@@ -27,39 +27,31 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Teste Flutter'),
       ),
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/background.jpg"),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Center(
-          child: ElevatedButton.icon(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const SecondScreen(),
-                ),
-              );
-            },
-            label: const Text(
-              'Ir para segunda tela',
-              style: TextStyle(fontSize: 18),
-            ),
-            icon: const Icon(
-              Icons.arrow_forward,
-              size: 24,
-            ),
-            style: ElevatedButton.styleFrom(
-              foregroundColor: AppColors.whiteText,
-              backgroundColor: AppColors.primary,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
+      body: Center(
+        child: ElevatedButton.icon(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const SecondScreen(),
               ),
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            );
+          },
+          label: const Text(
+            'Ir para segunda tela',
+            style: TextStyle(fontSize: 18),
+          ),
+          icon: const Icon(
+            Icons.arrow_forward,
+            size: 24,
+          ),
+          style: ElevatedButton.styleFrom(
+            foregroundColor: AppColors.whiteText,
+            backgroundColor: AppColors.primary,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
             ),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           ),
         ),
       ),

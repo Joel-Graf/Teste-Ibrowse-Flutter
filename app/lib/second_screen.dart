@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:app/app_colors.dart';
@@ -61,7 +60,7 @@ class _SecondScreenState extends State<SecondScreen> {
       scaffoldMessenger.showSnackBar(
         const SnackBar(
           content: Text('Nome do usuário gravado com sucesso'),
-          backgroundColor: AppColors.primary,
+          backgroundColor: AppColors.success,
           duration: Duration(seconds: 1),
         ),
       );
@@ -86,48 +85,60 @@ class _SecondScreenState extends State<SecondScreen> {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-            const Text(
-              'Nome do usuário:',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 10),
-            Text(
-              _userName,
-              style: const TextStyle(
-                fontSize: 24,
-                color: AppColors.primary,
-              ),
-            ),
-            const SizedBox(height: 20),
-            TextField(
-              controller: _textEditingController,
-              cursorColor: AppColors.primary,
-              decoration: InputDecoration(
-                hintText: 'Digite o seu nome',
-                border: const OutlineInputBorder(),
-                focusedBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(color: AppColors.primary),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const Text(
+                  'Nome do usuário:',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color: AppColors.primary.withOpacity(0.5)),
+                Text(
+                  _userName,
+                  style: const TextStyle(
+                    fontSize: 24,
+                    color: AppColors.primary,
+                  ),
                 ),
-              ),
+              ],
             ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                _writeUserName(_textEditingController.text);
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.primary,
-              ),
-              child: const Text('Gravar nome',
-                  style: TextStyle(
-                      color: AppColors
-                          .whiteText // Define a cor do texto como branco
-                      )),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                TextField(
+                  controller: _textEditingController,
+                  cursorColor: AppColors.primary,
+                  decoration: InputDecoration(
+                    hintText: 'Digite o seu nome',
+                    border: const OutlineInputBorder(),
+                    focusedBorder: const OutlineInputBorder(
+                      borderSide: BorderSide(color: AppColors.primary),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: AppColors.primary.withOpacity(0.5),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    _writeUserName(_textEditingController.text);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.primary,
+                  ),
+                  child: const Text(
+                    'Gravar nome',
+                    style: TextStyle(
+                      color: AppColors.whiteText,
+                      fontSize: 18,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
