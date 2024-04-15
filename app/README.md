@@ -28,25 +28,25 @@ Avaliar as habilidades básicas de um desenvolvedor Flutter júnior.
 
 ### Código limpo e organizado
 
-O código deve ser bem formatado e fácil de ler.
-Os nomes das variáveis e funções devem ser claros e descritivos.
+- O código deve ser bem formatado e fácil de ler.
+- Os nomes das variáveis e funções devem ser claros e descritivos.
 
 ### Uso correto dos widgets do Flutter
 
-Os widgets devem ser usados de forma correta e eficiente.
-A interface do usuário deve ser responsiva e funcionar em diferentes tamanhos de tela.
+- Os widgets devem ser usados de forma correta e eficiente.
+- A interface do usuário deve ser responsiva e funcionar em diferentes tamanhos de tela.
 
 ### Funcionalidade correta
 
-O aplicativo deve funcionar de acordo com as instruções.
-O botão deve navegar para a segunda tela.
-O nome do usuário deve ser gravado e recuperado do arquivo local.
+- O aplicativo deve funcionar de acordo com as instruções.
+- O botão deve navegar para a segunda tela.
+- O nome do usuário deve ser gravado e recuperado do arquivo local.
 
 ### Desempenho
 
-O aplicativo deve ser rápido e responsivo.
-O uso da memória deve ser eficiente.
+- O aplicativo deve ser rápido e responsivo.
+- O uso da memória deve ser eficiente.
 
 ### Recursos adicionais
 
-Documentação do Flutter: <https://docs.flutter.dev/>
+- Documentação do Flutter: <https://docs.flutter.dev/>
